@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,500,700&display=swap");
+body{
+	font-size: 25px;
+	font-family: "Roboto";
+	font-weight: 500;
+	opacity: 0;
+	transition: opacity .5s ease-in 0s;
+}
+.loaded body {
+	opacity: 1;
+}
+.wrapper{
+	min-height: 100%;
+	background-color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.link{
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 20px;
+	color: #fff;
+	font-size: 3rem;
+	padding: 20px 40px;
+	background: #16b566;
+	border-radius: 20px;
+	transition: background 0.3s ease 0s;
+	transition: transform 0.3s ease 0s;
+	transform: translate(0%, 0%);
+}
+.link:hover{
+	background: #41d98d;
+}
+.block{
+	color: #fff;
+	margin-top: 20px;
+	padding: 5px;
+	margin-left: 20px;
+	width: 200px;
+	height: 200px;
+	background: #16b566;
+}
+/* ----------------------------------------------- */
+.search-form {
+	max-width: 430px;
+	padding: 0 15px;
+	text-align: center;
+}
+.item-form:not(:last-child){
+	margin-bottom: 20px;
+}
+.search-form__start {
+	position: relative;
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	transition: background-color 0.3s ease 0s;
+}
+.search-form__start::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	background: #e8dd07;
+	opacity: 0;
+	animation: scale 2s linear infinite alternate running 0s;
+}
+@keyframes scale {
+	50%{
+		transform: translate(-50%, -50%) scale(1);
+		/* opacity: 0; */
+	}
+	100%{
+		transform: translate(-50%, -50%) scale(2);
+		opacity: .3;
+	}
+}
+.search-form__start:hover{
+	background-color: rgb(151, 149, 149);
+}
+.search-form__start svg{
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.search-form__input {
+	height: 40px;
+	border: 2px solid rgb(113, 113, 113);
+	border-radius: 2px;
+	padding: 0 10px;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .3s ease .5s;
+}
+
+/* ----------------------------------------------- */
+.search-form__counter{
+	transition: all .3s ease 0.2s;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.search-form__start._active + .search-form__input{
+	visibility: visible;
+	opacity: 1;
+	transition: opacity .5s ease 0s;
+}
+.search-form__start._active + .search-form__input + .search-form__counter{
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 1s ease 0.5s;
+}
+/* ----------------------------------------------- */
