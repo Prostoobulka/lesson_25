@@ -13,7 +13,7 @@
 
 <body>
 	<div class="wrapper">
-		<form class="search-form" action="#" method="get">
+		<form class="search-form" action="https://jsonplaceholder.typicode.com/posts" method="post">
 			<button class="search-form__start item-form" type="button">
 				<svg fill="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 					<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
@@ -22,7 +22,9 @@
 						d="M32.229 32.229L45.5 45.5" />
 				</svg>
 			</button>
-			<input autocomplete="off" maxlength="35" type="text" placeholder="" class="search-form__input item-form">
+			<input name="search" autocomplete="off" maxlength="35" type="text" placeholder=""
+				class="search-form__input item-form">
+			<button class="search-form__submit" type="submit"></button>
 			<div class="search-form__counter item-form">Залишилось: <span></span></div>
 		</form>
 		<!-- <a href="#somewhere" class="link">Click me!!!</a>
